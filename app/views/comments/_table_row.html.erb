@@ -1,0 +1,6 @@
+<div class="post-preview">
+  <h2 class="post-title">
+   <%= comment.content %>
+ </h2>
+ <p class="post-meta">Commented by <a href="#"><%= User.find(comment.user_id).email %></a> <%= comment.created_at  %></p>
+</div>

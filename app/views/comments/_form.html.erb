@@ -1,0 +1,43 @@
+
+<%= @comments = Comment.find_by_article_id(@article.id)%>
+
+
+<% @comments.each do |comment| %>
+<div class="post-preview">
+  <h2 class="post-title">
+   <%= comment.article_id %>
+ </h2>
+
+ <% end %>
+
+
+
+<% if user_signed_in? %>
+ <%= form_for(@comment) do |f| %>
+ <% if @article.errors.any? %>
+ <div id="error_explanation">
+  <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+  <ul>
+    <% @article.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<p>
+  <%= f.label :content %>
+  <%= f.text_field :content%>
+  <%=  f.hidden_field(:user_id, :value => current_user.id) %>
+  <%=  f.hidden_field(:article_id, :value => @article.id) %>
+</p>
+
+
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+<% else %>
+  <p> Plzz login to write commnet </p>
+  <% end %>

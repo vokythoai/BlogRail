@@ -1,0 +1,62 @@
+
+<h2> Post </h2>
+
+<%= form_for(@article) do |f| %>
+<% if @article.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+  <ul>
+    <% @article.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :text %>
+  <%= f.text_area :text %>
+<%= image_tag @article.avatar.url %>
+</p>
+
+
+<% end %>
+
+
+
+<h3> List comment for the post </h3>
+
+<div id="comment_table">
+<% @comments.each do |comment| %>
+<%= render partial: 'comments/table_row', locals: {comment: comment} %>
+
+<% end %>
+
+</div>
+
+<% if user_signed_in? %>
+<div class="new_comment" >
+<%= form_for(@comment,remote: true )do |f| %>
+
+
+<p>
+  <%= f.label :content %>
+  <%= f.text_field :content%>
+
+  <%=  f.hidden_field(:user_id, :value => current_user.id) %>
+  <%=  f.hidden_field(:article_id, :value => @article.id) %>
+</p>
+</div>
+
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+<% else %>
+  <h1> Plzz login to write cm </h1>
+  <% end %>
