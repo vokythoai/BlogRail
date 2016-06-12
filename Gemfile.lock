@@ -200,6 +200,9 @@ GEM
       loofah (~> 2.0)
     rails-settings-cached (0.6.4)
       rails (>= 4.2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_best_practices (1.16.0)
       activesupport
       code_analyzer (>= 0.4.3)
@@ -208,6 +211,8 @@ GEM
       json
       require_all
       ruby-progressbar
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (4.2.6)
       actionpack (= 4.2.6)
       activesupport (= 4.2.6)
@@ -350,6 +355,7 @@ DEPENDENCIES
   quiet_assets (~> 1.1)
   rails (= 4.2.6)
   rails-settings-cached (~> 0.6.3)
+  rails_12factor
   rails_best_practices (~> 1.16)
   rspec (~> 3.4)
   rspec-rails (~> 3.4, >= 3.4.2)
