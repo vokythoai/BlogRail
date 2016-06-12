@@ -1,0 +1,16 @@
+section.content-header
+section.content
+  .box.box-danger.data-crawling
+    h1.text-center List interest topics
+    - current_user.interest.to_a.each do |i|
+      h3 = i
+      br
+    h1.text-center Choose some new interest topics
+    h3 Ex: IT,Economic,Money
+    = form_for current_user do |f|
+      .form-group
+        .div
+          = "Interest"
+        .div_
+          = f.text_field :interest, class: "form-control first_input"
+      = f.submit "Save", name: nil, class: "btn btn-info submit"

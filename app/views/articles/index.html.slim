@@ -1,0 +1,26 @@
+section.content-header
+section.content
+  .box.box-danger.data-crawling
+    h1.text-center DATA CRAWLING
+    .box-body.table-responsive.no-padding
+      table.table-bordered.table-striped.dataTable#example2
+        thead
+          tr
+            th
+              = "Number"
+            th.title-data
+              = "Topic"
+
+        tbody
+          - @data.each_with_index do |d,i|
+            tr
+              td
+                = i + 1
+              td
+                = d.title
+javascript:
+  $('#example2').DataTable();
+
+
+
+

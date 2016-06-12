@@ -1,0 +1,13 @@
+p.title-email
+  = "Hello "
+  = @get_email
+
+p.content-email-expire
+  h3 Đây là một số chủ đề mà bạn quan tâm
+  br
+
+  - @get_topic.each_with_index do |t,i|
+    = link_to t.title,t.url
+    br
+
+p Thanks
