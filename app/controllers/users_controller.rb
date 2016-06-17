@@ -20,6 +20,7 @@
     end
 
     DataMailer.send_data_to_user(@user).deliver_now
+    flash[:notice] = "Kiem tra email de xem chu de ban tim kiem"
   end
 
 
