@@ -75,7 +75,7 @@ gem 'cancancan', '~> 1.13', '>= 1.13.1'
 gem 'squeel', '~> 1.2', '>= 1.2.3'
 gem 'draper', '~> 2.1'
 gem 'active_model_serializers', '~> 0.9.5'
-gem 'rails-settings-cached', '~> 0.6.3'
+
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'whenever', '~> 0.9.4'
