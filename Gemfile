@@ -86,3 +86,4 @@ gem 'nokogiri', '~> 1.6', '>= 1.6.7.2'
 gem 'sprockets-rails', '2.3.3'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
+
