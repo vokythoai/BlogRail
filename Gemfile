@@ -40,6 +40,10 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.4'
   gem 'quiet_assets', '~> 1.1'
 end
+group :production do
+
+  gem 'puma', '2.11.1'
+end
 
 group :test do
   gem 'rspec', '~> 3.4'
